@@ -1,19 +1,20 @@
-export default function TarotCard({
-  faceDown = true,
-  imageSrc,
-  title = 'Card',
-  onClick,
-}) {
+export default function TarotCard({ card, faceDown = true, onClick }) {
   return (
     <button
       className={`card ${faceDown ? 'card--back' : ''}`}
       onClick={onClick}
-      aria-label={faceDown ? 'Hidden card' : `Card: ${title}`}
+      style={{ cursor: onClick ? 'pointer' : 'default' }}
+      aria-label={faceDown ? 'Hidden card' : `Card: ${card?.arcaneName}`}
     >
-      {faceDown ? (
+      {faceDown || !card ? (
         <span className="cardBack">🔮</span>
       ) : (
-        <img className="cardImg" src={imageSrc} alt={title} loading="lazy" />
+        <img
+          className="cardImg"
+          src={card.arcaneImage.imageSrc}
+          alt={card.arcaneName}
+          loading="lazy"
+        />
       )}
     </button>
   );
