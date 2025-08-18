@@ -28,7 +28,7 @@ export default function Home() {
         <section>
             <h1>Tarot Cards</h1>
             <p>Click a card to see its details</p>
-            <div className="grid">
+            <div className="cards-grid">
                 {cards.map((card) => (
                     <TarotCard
                         key={card.id}

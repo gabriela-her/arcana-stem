@@ -61,9 +61,10 @@ footer {
   margin-top: 3rem;
 }
 
+/* Tarjetas generales */
 .card {
-  width: 120px;
-  height: 180px;
+  width: 150px;
+  height: 240px;
   border-radius: 12px;
   box-shadow: 0 0 10px var(--color-gold);
   background: linear-gradient(135deg, var(--color-violet), var(--color-darkblue));
@@ -84,3 +85,46 @@ footer {
   background: linear-gradient(135deg, var(--color-darkblue), var(--color-violet));
   color: var(--color-gold);
 }
+
+/* Imagen de carta */
+.cardBack,
+.cardImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+/* 📌 SECCIÓN: Cartas seleccionadas (Past, Present, Future) */
+.reading-slots {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+
+.reading-slots > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.reading-slots h2 {
+  font-family: var(--font-esoteric);
+  color: var(--color-gold);
+  margin-bottom: 1rem;
+}
+
+/* 📌 SECCIÓN: Todas las cartas disponibles (grilla) */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  justify-items: center;
+}
+
