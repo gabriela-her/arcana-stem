@@ -1,4 +1,3 @@
-// src/App.jsx
 function App() {
   return null; // Ahora todo se maneja desde router.jsx
 }
