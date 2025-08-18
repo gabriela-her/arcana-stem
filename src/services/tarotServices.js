@@ -1,15 +1,17 @@
 const API_BASE = 'https://6872278c76a5723aacd3cbb3.mockapi.io/api/v1/tarot';
 
-
+// --- Internal cache ---
 let _cacheAll = null;
 const _cacheById = new Map();
 
+// --- Utility fetch ---
 async function safeFetch(url) {
   const res = await fetch(url);
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   return res.json();
 }
 
+// --- API functions ---
 export async function getCards({ force = false } = {}) {
   if (_cacheAll && !force) return _cacheAll;
   const data = await safeFetch(API_BASE);

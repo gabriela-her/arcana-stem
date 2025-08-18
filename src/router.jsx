@@ -1,6 +1,6 @@
 // src/router.jsx
 import { createBrowserRouter } from 'react-router-dom';
-import Layout from './components/Layout';
+import Layout from './components/layout';
 import Home from './pages/Home';
 import CardDetail from './pages/CardDetail';
 import Reading from './pages/Reading';
