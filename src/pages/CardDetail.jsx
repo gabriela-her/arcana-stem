@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { getCardById } from '../services/tarotServices';
+import TarotCard from '../components/TarotCard.jsx';
 
 export default function CardDetail() {
   const { id } = useParams();

@@ -1,19 +1,20 @@
+// src/router.jsx
 import { createBrowserRouter } from 'react-router-dom';
-import App from './App.jsx';
-import Home from './pages/Home.jsx';
-import CardDetail from './pages/CardDetail.jsx';
-import Reading from './pages/Reading.jsx';
+import Layout from './components/Layout';
+import Home from './pages/Home';
+import CardDetail from './pages/CardDetail';
+import Reading from './pages/Reading';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <App />,
+    element: <Layout />,
     children: [
       { index: true, element: <Home /> },
       { path: 'card/:id', element: <CardDetail /> },
-      { path: 'reading', element: <Reading /> },
-    ],
-  },
+      { path: 'reading', element: <Reading /> }
+    ]
+  }
 ]);
 
 export default router;
