@@ -1,0 +1,86 @@
+:root {
+  --color-bg: #0B0C10; /* negro oscuro */
+  --color-darkblue: #1F2937;
+  --color-violet: #6B21A8;
+  --color-gold: #D4AF37;
+
+  --font-esoteric: 'Cinzel', serif;
+  --font-legible: 'Cormorant Garamond', serif;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: white;
+  font-family: var(--font-legible);
+  margin: 0;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--color-gold);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background-color: var(--color-bg);
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--color-gold);
+  z-index: 100;
+}
+
+.navbar a {
+  font-family: var(--font-esoteric);
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: var(--color-gold);
+}
+.navbar a.active {
+  border-bottom: 2px solid var(--color-gold);
+}
+
+.container {
+  padding-top: 70px; /* altura navbar */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 3rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.8rem;
+  border-top: 1px solid var(--color-gold);
+  margin-top: 3rem;
+}
+
+.card {
+  width: 120px;
+  height: 180px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px var(--color-gold);
+  background: linear-gradient(135deg, var(--color-violet), var(--color-darkblue));
+  border: 2px solid var(--color-gold);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-gold);
+  font-size: 2rem;
+  user-select: none;
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+.card--back {
+  background: linear-gradient(135deg, var(--color-darkblue), var(--color-violet));
+  color: var(--color-gold);
+}
