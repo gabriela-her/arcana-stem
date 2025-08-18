@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { getCards } from '../services/tarotServices.js';
 import TarotCard from '../components/TarotCard.jsx';
 
@@ -13,7 +13,7 @@ export default function Reading() {
   const [error, setError] = useState(null);
 
   // Cargar todas las cartas
-  useState(() => {
+  useEffect(() => {
     getCards()
       .then((data) => setAllCards(data))
       .catch((err) => setError(err.message));
