@@ -24,26 +24,7 @@ a:hover {
   text-decoration: underline;
 }
 
-.navbar {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  background-color: var(--color-bg);
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  padding: 1rem 0;
-  border-bottom: 1px solid var(--color-gold);
-  z-index: 100;
-}
-.navbar a {
-  font-family: var(--font-esoteric);
-  font-weight: bold;
-  font-size: 1.2rem;
-  color: var(--color-gold);
-}
-.navbar a.active {
-  border-bottom: 2px solid var(--color-gold);
-}
+
 
 .container {
   padding-top: 70px;
