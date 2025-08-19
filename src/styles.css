@@ -1,8 +1,10 @@
-:root {
-  --color-bg: #0C0C1D; /* negro oscuro */
-  --color-darkblue: #1F2937;
-   --color-gold: #E6CFA8;
+/* styles/global.css */
 
+:root {
+  --color-bg: #0C0C1D;
+  --color-darkblue: #1F2937;
+  --color-gold: #E6CFA8;
+  --color-violet: #5B3A85; /* añadida para gradientes */
   --font-esoteric: 'Cinzel', serif;
   --font-legible: 'Cormorant Garamond', serif;
 }
@@ -34,7 +36,6 @@ a:hover {
   border-bottom: 1px solid var(--color-gold);
   z-index: 100;
 }
-
 .navbar a {
   font-family: var(--font-esoteric);
   font-weight: bold;
@@ -46,10 +47,15 @@ a:hover {
 }
 
 .container {
-  padding-top: 70px; /* altura navbar */
+  padding-top: 70px;
   max-width: 1200px;
   margin: 0 auto;
   padding-bottom: 3rem;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
 }
 
 footer {
@@ -60,78 +66,7 @@ footer {
   margin-top: 3rem;
 }
 
-/* Tarjetas generales */
-.card {
-  width: 150px;
-  height: 280px;
-  border-radius: 12px;
-  box-shadow: 0 0 10px var(--color-gold);
-  background: linear-gradient(135deg, var(--color-violet), var(--color-darkblue));
-  border: 2px solid var(--color-gold);
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: var(--color-gold);
-  font-size: 2rem;
-  user-select: none;
-  transition: transform 0.3s ease;
-}
-.card:hover {
-  transform: scale(1.05);
-}
-.card--back {
-  background: linear-gradient(135deg, var(--color-darkblue), var(--color-violet));
-  color: var(--color-gold);
-}
-
-/* Imagen de carta */
-.cardBack,
-.cardImg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 12px;
-  display: block;
-}
-
-/* 📌 SECCIÓN: Cartas seleccionadas (Past, Present, Future) */
-.reading-slots {
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  gap: 2rem;
-  flex-wrap: wrap;
-  margin: 2rem 0;
-}
-
-.reading-slots > div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  background-color : rgba(128, 128, 128, 0.251);
-  border-radius: 12px;
-  height: 280px;
-  width: 160px;
-}
-
-.reading-slots h2 {
-  font-family: var(--font-esoteric);
-  color: var(--color-gold);
-  margin-bottom: 1rem;
-  
-}
-
-/* 📌 SECCIÓN: Todas las cartas disponibles (grilla) */
-.cards-grid {
-  display: grid;
- grid-template-columns: repeat(4, 1fr); /* 4 columnas iguales */
-  gap: 3rem;
-  padding: 2rem;
-  justify-items: center;
-}
-
+/* Estrellas animadas de fondo */
 @keyframes twinkle {
   0%, 100% { opacity: 0.8; }
   50% { opacity: 0.2; }

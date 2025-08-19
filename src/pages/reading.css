@@ -1,0 +1,27 @@
+/* styles/reading.css */
+
+.reading-slots {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+
+.reading-slots > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: rgba(128, 128, 128, 0.251);
+  border-radius: 12px;
+  height: 280px;
+  width: 160px;
+}
+
+.reading-slots h2 {
+  font-family: var(--font-esoteric);
+  color: var(--color-gold);
+  margin-bottom: 1rem;
+}

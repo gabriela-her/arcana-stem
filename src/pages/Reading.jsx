@@ -58,7 +58,7 @@ export default function Reading() {
 
   return (
     <section>
-      <h1>Tarot Reading</h1>
+      <h1>Descubre lo que el destino guarda tras el velo de lo desconocido</h1>
       {/* Mostrar error si hay */}
       {error && <p>Error: {error}</p>}
 
