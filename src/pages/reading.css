@@ -25,3 +25,34 @@
   color: var(--color-gold);
   margin-bottom: 1rem;
 }
+
+.deck-spread {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 0;
+  padding: 3rem 1rem;
+  overflow-x: auto;
+  position: relative;
+}
+
+.deck-spread .card {
+  position: relative;
+  margin-left: -100px; /* Superposición */
+  transition: transform 0.3s ease, z-index 0.3s ease;
+  transform: rotate(calc(-3deg + var(--index) * 0.3deg)); /* rotación opcional */
+}
+
+.deck-spread .card:hover {
+transform: translate(-40) scale(1.05);
+z-index: 5;
+}
+.deck-spread .card:first-child {
+  margin-left: 0;
+}
+
+.deck-spread .card.selected {
+  transform: translateY(-40px) scale(1.05);
+  z-index: 10;
+}
+
