@@ -1,5 +1,9 @@
 /* styles/home.css */
 
+h1 {
+  display: flex;
+  justify-content: center;
+}
 /* 📌 Tarjetas del mazo general (Home) */
 .card {
   width: 150px;

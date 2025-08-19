@@ -39,3 +39,16 @@
   color: var(--color-gold);
   text-decoration: none;
 }
+
+a {
+  color: var(--color-gold);
+  text-decoration: none;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.8rem;
+  border-top: 1px solid var(--color-gold);
+  margin-top: 3rem;
+}

@@ -107,7 +107,7 @@ export default function Reading() {
             <button onClick={resetReading}>Reset Reading</button>
 
             {/* Mazo estirado como en una mesa real*/}
-            <h2>All cards</h2>
+            <h2>"Elige tu camino: detrás de cada carta, una visión del destino… y una mente que cambió el mundo."</h2>
             <div className="deck-spread">
                 {allCards
                 .filter(

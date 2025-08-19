@@ -3,6 +3,7 @@
 :root {
   --color-bg: #0C0C1D;
   --color-darkblue: #1F2937;
+  --color-dark-gold: #CFAE65; 
   --color-gold: #E6CFA8;
   --font-esoteric: 'Cinzel', serif;
   --font-legible: 'Cormorant Garamond', serif;
@@ -16,34 +17,11 @@ body {
   min-height: 100vh;
 }
 
-a {
-  color: var(--color-gold);
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
-
-
-
 .container {
   padding-top: 70px;
   max-width: 1200px;
   margin: 0 auto;
   padding-bottom: 3rem;
-}
-
-h1 {
-  display: flex;
-  justify-content: center;
-}
-
-footer {
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.8rem;
-  border-top: 1px solid var(--color-gold);
-  margin-top: 3rem;
 }
 
 /* Estrellas animadas de fondo */
@@ -56,7 +34,7 @@ footer {
   position: absolute;
   background: white;
   border-radius: 50%;
-  width: 2px;
+  width: 3px;
   height: 2px;
   animation: twinkle 2s infinite ease-in-out;
 }
