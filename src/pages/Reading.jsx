@@ -65,7 +65,7 @@ export default function Reading() {
       {/* Slots para las cartas seleccionadas */}
       <div className="reading-slots">
         <div>
-          <h2>Past</h2>
+          <h2>Pasado</h2>
           {selectedCards.past ? (
             // Mostrar carta seleccionada, boca abajo si aún no se reveló
             <TarotCard card={selectedCards.past} faceDown={!revealed} />
@@ -74,7 +74,7 @@ export default function Reading() {
           )}
         </div>
         <div>
-          <h2>Present</h2>
+          <h2>Presente</h2>
           {selectedCards.present ? (
             <TarotCard card={selectedCards.present} faceDown={!revealed} />
           ) : (
@@ -82,7 +82,7 @@ export default function Reading() {
           )}
         </div>
         <div>
-          <h2>Future</h2>
+          <h2>Futuro</h2>
           {selectedCards.future ? (
             <TarotCard card={selectedCards.future} faceDown={!revealed} />
           ) : (

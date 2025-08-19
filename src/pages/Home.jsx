@@ -26,8 +26,8 @@ export default function Home() {
 
     return (
         <section>
-            <h1>Tarot Cards</h1>
-            <p>Click a card to see its details</p>
+            <h1>Los secretos del Tarot</h1>
+            <p>Desvela cada carta y revela el misterio de lo desconocido</p>
             <div className="cards-grid">
                 {cards.map((card) => (
                     <TarotCard

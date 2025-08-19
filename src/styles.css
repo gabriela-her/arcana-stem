@@ -1,8 +1,7 @@
 :root {
-  --color-bg: #0B0C10; /* negro oscuro */
+  --color-bg: #0C0C1D; /* negro oscuro */
   --color-darkblue: #1F2937;
-  --color-violet: #6B21A8;
-  --color-gold: #D4AF37;
+   --color-gold: #E6CFA8;
 
   --font-esoteric: 'Cinzel', serif;
   --font-legible: 'Cormorant Garamond', serif;
@@ -64,7 +63,7 @@ footer {
 /* Tarjetas generales */
 .card {
   width: 150px;
-  height: 240px;
+  height: 280px;
   border-radius: 12px;
   box-shadow: 0 0 10px var(--color-gold);
   background: linear-gradient(135deg, var(--color-violet), var(--color-darkblue));
@@ -111,20 +110,38 @@ footer {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  background-color : rgba(128, 128, 128, 0.251);
+  border-radius: 12px;
+  height: 280px;
+  width: 160px;
 }
 
 .reading-slots h2 {
   font-family: var(--font-esoteric);
   color: var(--color-gold);
   margin-bottom: 1rem;
+  
 }
 
 /* 📌 SECCIÓN: Todas las cartas disponibles (grilla) */
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 2rem;
+ grid-template-columns: repeat(4, 1fr); /* 4 columnas iguales */
+  gap: 3rem;
   padding: 2rem;
   justify-items: center;
 }
 
+@keyframes twinkle {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 0.2; }
+}
+
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  width: 2px;
+  height: 2px;
+  animation: twinkle 2s infinite ease-in-out;
+}
