@@ -3,6 +3,13 @@
 h1 {
   display: flex;
   justify-content: center;
+  padding: 3rem;
+  margin-top: 7rem;
+}
+
+p{
+    display: flex;
+    justify-content: center;
 }
 /* 📌 Tarjetas del mazo general (Home) */
 .card {

@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { getCardById } from '../services/tarotServices';
-import TarotCard from '../components/TarotCard.jsx';
+import './cardDetail.css'
+
 
 export default function CardDetail() {
   const { id } = useParams();
@@ -26,16 +27,25 @@ export default function CardDetail() {
   if (!card) return null;
 
   return (
-    <article>
-      <Link to="/">← Back</Link>
-      <h1>{card.arcaneNumber} · {card.arcaneName}</h1>
+   <article className="card-detail">
+  <Link to="/">← Back</Link>
+
+  <div className="card-columns">
+    <div className="card-box">
       <img src={card.arcaneImage?.imageSrc} alt={card.arcaneName} />
+      <h1>{card.arcaneNumber} · {card.arcaneName}</h1>
       <p>{card.arcaneDescription}</p>
-      <h2>{card.goddessName}</h2>
-      <p>{card.goddessDescription}</p>
+    </div>
+
+    <div className="card-box">
       {card.goddessImage?.imageSrc && (
         <img src={card.goddessImage.imageSrc} alt={card.goddessName} />
       )}
-    </article>
+      <h2>{card.goddessName}</h2>
+      <p>{card.goddessDescription}</p>
+    </div>
+  </div>
+</article>
+
   );
 }
