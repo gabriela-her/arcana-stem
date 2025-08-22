@@ -66,45 +66,44 @@ export default function Reading() {
             {/* Slots para las cartas seleccionadas */}
             <div className="reading-slots">
                 <div>
-                    <h2>Pasado</h2>
+                    <h3>Pasado</h3>
                     {selectedCards.past ? (
                         // Mostrar carta seleccionada, boca abajo si aún no se reveló
                         <TarotCard card={selectedCards.past} faceDown={!revealed} />
                     ) : (
-                        <p>Pick a card</p>
+                        <p>Elige</p>
                     )}
                 </div>
                 <div>
-                    <h2>Presente</h2>
+                    <h3>Presente</h3>
                     {selectedCards.present ? (
                         <TarotCard card={selectedCards.present} faceDown={!revealed} />
                     ) : (
-                        <p>Pick a card</p>
+                        <p>Elige</p>
                     )}
                 </div>
                 <div>
-                    <h2>Futuro</h2>
+                    <h3>Futuro</h3>
                     {selectedCards.future ? (
                         <TarotCard card={selectedCards.future} faceDown={!revealed} />
                     ) : (
-                        <p>Pick a card</p>
+                        <p>Elige</p>
                     )}
                 </div>
             </div>
 
-            {/* Botón para revelar las cartas seleccionadas */}
-            <button
-                onClick={handleReveal}
-                // Deshabilitar si ya están reveladas o no se han seleccionado las 3 cartas
-                disabled={
-                    revealed || Object.values(selectedCards).some((v) => v === null)
-                }
-            >
-                Desvelar lectura
-            </button>
+            <div className="reading-buttons">
+  <button
+    onClick={handleReveal}
+    disabled={
+      revealed || Object.values(selectedCards).some((v) => v === null)
+    }
+  >
+    Desvelar lectura
+  </button>
 
-            {/* Botón para reiniciar la lectura */}
-            <button onClick={resetReading}>Reset Reading</button>
+  <button onClick={resetReading}>Reiniciar Lectura</button>
+</div>
 
             {/* Mazo estirado como en una mesa real*/}
             <h2>"Elige tu camino: detrás de cada carta, una visión del destino… y una mente que cambió el mundo."</h2>

@@ -26,12 +26,47 @@
   margin-bottom: 1rem;
 }
 
+.reading-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.reading-buttons button {
+  background-color: var(--color-dark-gold);
+  color: black;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-esoteric);
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+.reading-buttons button:hover:not(:disabled) {
+  background-color: #f5d88c;
+}
+
+.reading-buttons button:disabled {
+  background-color: #bfb68a;
+  cursor: not-allowed;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.2rem; 
+}
+
 .deck-spread {
   display: flex;
   justify-content: center;
   align-items: flex-end;
   gap: 0;
-  padding: 3rem 1rem;
+  padding: 3rem 2rem;
   overflow-x: auto;
   position: relative;
 }
@@ -56,3 +91,39 @@ z-index: 5;
   z-index: 10;
 }
 
+@media (max-width: 600px) {
+  .reading-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  h1{
+    font-size: 1.4rem;
+  }
+  .reading-buttons button {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+    width: 80%; /* o 100% si quieres que ocupen todo el ancho disponible */
+  }
+
+  .reading-slots > div {
+    width: 130px;
+    height: 240px;
+  }
+
+  .deck-spread {
+    padding: 2rem 0.5rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .deck-spread {
+    padding: 2rem 1.5rem;
+  }
+}

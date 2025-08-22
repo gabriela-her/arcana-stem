@@ -1,15 +1,20 @@
-/* styles/home.css */
+body {
+  font-family: 'cinzel', cormorant garamont, sans-serif;
+}
 
 h1 {
+    font-size: 1.8rem;
   display: flex;
   justify-content: center;
   padding: 3rem;
-  margin-top: 7rem;
+  margin-top: 6rem;
+  font-family: cinzel;
 }
 
 p{
     display: flex;
     justify-content: center;
+    font-size: 1.4rem;
 }
 /* 📌 Tarjetas del mazo general (Home) */
 .card {
@@ -49,11 +54,67 @@ p{
   display: block;
 }
 
-/* 📌 Grilla de cartas */
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 3rem;
   padding: 2rem;
   justify-items: center;
+  
 }
+
+@media (max-width: 1024px) {
+  .cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr); /* ✅ Aquí hacemos dos por fila */
+  }
+}
+
+@media (max-width: 480px) {
+  .cards-grid {
+    grid-template-columns: 2, 1fr;
+  }
+
+  .card {
+    width: 120px;
+    height: auto;
+    
+  }
+
+  h1 {
+    font-size: 1.4rem;
+    margin-top: 3rem;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+    padding: 0 1rem;
+    text-align: center;
+  }
+}
+
+
+  h2 {
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  /* p {
+    padding: 0 1rem;
+    text-align: center;
+  }
+
+    .card {
+    width: 120px;
+    height: 220px;
+    margin-bottom: 1rem;
+  }
+} */
+

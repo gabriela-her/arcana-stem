@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { getCardById } from '../services/tarotServices';
-import './cardDetail.css'
-
+import './cardDetail.css';
 
 export default function CardDetail() {
   const { id } = useParams();
@@ -27,25 +26,24 @@ export default function CardDetail() {
   if (!card) return null;
 
   return (
-   <article className="card-detail">
-  <Link to="/">← Back</Link>
+    <article className="card-detail">
+      <Link to="/" className="back-link">← Atrás</Link>
 
-  <div className="card-columns">
-    <div className="card-box">
-      <img src={card.arcaneImage?.imageSrc} alt={card.arcaneName} />
-      <h1>{card.arcaneNumber} · {card.arcaneName}</h1>
-      <p>{card.arcaneDescription}</p>
-    </div>
+      <div className="card-columns">
+        <div className="card-box">
+          <img src={card.arcaneImage?.imageSrc} alt={card.arcaneName} />
+          <h1>{card.arcaneNumber} · {card.arcaneName}</h1>
+          <p>{card.arcaneDescription}</p>
+        </div>
 
-    <div className="card-box">
-      {card.goddessImage?.imageSrc && (
-        <img src={card.goddessImage.imageSrc} alt={card.goddessName} />
-      )}
-      <h2>{card.goddessName}</h2>
-      <p>{card.goddessDescription}</p>
-    </div>
-  </div>
-</article>
-
+        <div className="card-box">
+          {card.goddessImage?.imageSrc && (
+            <img src={card.goddessImage.imageSrc} alt={card.goddessName} />
+          )}
+          <h2>{card.goddessName}</h2>
+          <p>{card.goddessDescription}</p>
+        </div>
+      </div>
+    </article>
   );
 }
