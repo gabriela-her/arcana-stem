@@ -24,6 +24,7 @@
   font-family: var(--font-esoteric);
   color: var(--color-gold);
   margin-bottom: 1rem;
+  align-items: center;
 }
 
 .reading-buttons {
