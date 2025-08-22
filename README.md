@@ -12,16 +12,16 @@ Cada carta abre una ventana a su legado, permitiendo conocer tanto su significad
 ## 🖼️ Demo de la App
 
 ### Pantalla principal
-![Pantalla principal](../assets/home.png)
+![Pantalla principal](src/assets/home.png)
 
 ### Detalle de tarjeta
-![Detalle de tarjeta](../assets/home-card-detail.png)
+![Detalle de tarjeta](src/assets/home-card-detail.png)
 
 ### Tarjetas de lectura
-![Tarjetas de lectura](../assets/reading-cards.png)
+![Tarjetas de lectura](src/assets/reading-cards.png)
 
 ### Lectura
-![Lectura](../assets/reading.png)
+![Lectura](src/assets/reading.png)
 
 
 
