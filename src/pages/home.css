@@ -1,120 +1,98 @@
-body {
-  font-family: 'cinzel', cormorant garamont, sans-serif;
+.home-section {
+  padding-top: 8rem;
+  /* deja espacio por el navbar fijo */
+  padding-bottom: 6rem;
+  text-align: center;
 }
 
-h1 {
-    font-size: 1.8rem;
-  display: flex;
+.home-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+
+.home-section h1 {
+  font-family: var(--font-esoteric);
+  font-size: 2.5rem;
   justify-content: center;
-  padding: 3rem;
-  margin-top: 6rem;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-gold);
   font-family: cinzel;
 }
 
-p{
-    display: flex;
-    justify-content: center;
-    font-size: 1.4rem;
+.home-section p {
+  font-size: 1.3rem;
+  margin-bottom: 4rem;
+  opacity: 0.9;
 }
-/* 📌 Tarjetas del mazo general (Home) */
+
+/* ------------------------------
+   Grid de cartas
+------------------------------ */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 3rem;
+  justify-content: center;
+  justify-items: center;
+
+
+}
+
 .card {
-  width: 150px;
+  width: 170px;
   height: 280px;
   border-radius: 12px;
-  box-shadow: 0 0 10px var(--color-gold);
-  background: linear-gradient(135deg, var(--color-violet), var(--color-darkblue));
-  border: 2px solid var(--color-gold);
+  box-shadow: 0 0 15px var(--color-gold);
+  border: 1px solid var(--color-gold);
   cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   color: var(--color-gold);
-  font-size: 2rem;
-  user-select: none;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 0;
 }
 
 .card:hover {
   transform: scale(1.05);
+  box-shadow: 0 0 25px var(--color-gold);
+
 }
 
-/* 📌 Reverso de la carta (cuando está boca abajo) */
-.card--back {
-  background: linear-gradient(135deg, var(--color-darkblue), var(--color-violet));
-  color: var(--color-gold);
-}
 
-/* 📌 Imagen o ícono dentro de la carta */
+/* Imagen dentro de la carta */
 .cardBack,
 .cardImg {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 12px;
-  display: block;
 }
 
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 3rem;
-  padding: 2rem;
-  justify-items: center;
-  
-}
+/* ------------------------------
+   Responsive
+------------------------------ */
 
-@media (max-width: 1024px) {
-  .cards-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
 
 @media (max-width: 768px) {
   .cards-grid {
-    grid-template-columns: repeat(2, 1fr); /* ✅ Aquí hacemos dos por fila */
+    grid-template-columns: repeat(2, 1fr);
+    /* ✅ Aquí hacemos dos por fila */
   }
 }
 
 @media (max-width: 480px) {
   .cards-grid {
-    grid-template-columns: 2, 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 1.5rem;   
   }
 
   .card {
-    width: 120px;
+    max-width: 130px;
+    width: 100%;
     height: auto;
-    
+
   }
 
-  h1 {
-    font-size: 1.4rem;
-    margin-top: 3rem;
-    text-align: center;
-    padding: 2rem;
-  }
-
-  p {
-    font-size: 1.2rem;
-    padding: 0 1rem;
-    text-align: center;
-  }
 }
-
-
-  h2 {
-    font-size: 1.2rem;
-    padding: 0.5rem;
-    margin-bottom: 0.5rem;
-  }
-  /* p {
-    padding: 0 1rem;
-    text-align: center;
-  }
-
-    .card {
-    width: 120px;
-    height: 220px;
-    margin-bottom: 1rem;
-  }
-} */
-
