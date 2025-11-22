@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getCards } from '../services/tarotServices';
 import TarotCard from '../components/TarotCard';
-import './home.css'; 
+import './home.css';
 
 export default function Home() {
   const [cards, setCards] = useState([]);
@@ -27,18 +27,20 @@ export default function Home() {
 
   return (
     <section className="home-section">
-      <h1>Los secretos del Tarot</h1>
-      <p>Desvela cada carta y revela el misterio de lo desconocido</p>
+      <div className="home-wrapper">
+        <h1>Los secretos del Tarot</h1>
+        <p>Desvela cada carta y revela el misterio de lo desconocido</p>
 
-      <div className="cards-grid">
-        {cards.map((card) => (
-          <TarotCard
-            key={card.id}
-            card={card}
-            faceDown={true}
-            onClick={() => navigate(`/card/${card.id}`)}
-          />
-        ))}
+        <div className="cards-grid">
+          {cards.map((card) => (
+            <TarotCard
+              key={card.id}
+              card={card}
+              faceDown={true}
+              onClick={() => navigate(`/card/${card.id}`)}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
