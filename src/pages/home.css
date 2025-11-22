@@ -24,7 +24,22 @@
   color: var(--color-gold);
   text-shadow: 0 0 8px rgba(230, 207, 168, 0.25);
 }
+.home-title {
+  opacity: 0;
+  transform: translateY(120px);
+  animation: fadeDown 1.5s ease forwards;
+}
 
+@keyframes fadeDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .home-subtitle {
   font-size: 1.4rem;
   margin-bottom: 2.5rem;
