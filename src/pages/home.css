@@ -11,24 +11,49 @@
 }
 
 
-.home-section h1 {
+/* ------------------------------
+   Tipografías específicas Home
+------------------------------ */
+
+.home-title {
   font-family: var(--font-esoteric);
   font-size: 3rem;
-  justify-content: center;
   margin-bottom: 1.5rem;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--color-gold);
+  text-shadow: 0 0 8px rgba(230, 207, 168, 0.25);
 }
 
-.home-section p {
+.home-subtitle {
   font-size: 1.4rem;
-  margin-bottom: 3.5rem;
-  opacity: 0.9;
+  margin-bottom: 2.5rem;
+  opacity: 0.85;
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+  color: rgba(230, 207, 168, 0.9);
+  font-style: italic;
 }
+
+.home-description {
+  font-size: 1.2rem;
+  margin-bottom: 2.5rem;
+  opacity: 0.85;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.home-cta {
+  font-size: 1.3rem;
+  color: var(--color-gold);
+  margin-bottom: 4rem;
+  text-shadow: 0 0 10px rgba(230, 207, 168, 0.25);
+  font-family: var(--font-esoteric);
+}
+
 
 /* ------------------------------
    Grid de cartas
@@ -36,9 +61,10 @@
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-  gap: 2.5rem;
+  gap: 2rem;
   justify-content: center;
   justify-items: center;
+  padding-bottom: 8rem;
 
 
 }
@@ -81,13 +107,22 @@
     padding-top: 8rem;
   }
 
-  .home-section h1{ 
+  .home-title{ 
     font-size: 2rem;
   }
 
-  .home-section p{
+  .home-subtitle{
     font-size: 1.1rem;
   }
+
+  .home-description{
+    font-size: 1rem;
+  }
+
+  .home-cta {
+    font-size: 1.1rem;
+  }
+
   .cards-grid {
     grid-template-columns: repeat(2, 1fr);
   }
