@@ -74,17 +74,16 @@
   height: 280px;
   border-radius: 12px;
   box-shadow: 0 0 15px var(--color-gold);
-  border: 1px solid var(--color-gold);
   cursor: pointer;
   color: var(--color-gold);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.35s ease;
   padding: 0;
 }
 
 .card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px var(--color-gold);
-
+  transform: translateY(-4px) scale(1.03);
+  filter: brightness(1.15);
+  box-shadow: 0 0 30px rgba(230, 207, 168, 0.45);
 }
 
 
@@ -107,15 +106,15 @@
     padding-top: 8rem;
   }
 
-  .home-title{ 
+  .home-title {
     font-size: 2rem;
   }
 
-  .home-subtitle{
+  .home-subtitle {
     font-size: 1.1rem;
   }
 
-  .home-description{
+  .home-description {
     font-size: 1rem;
   }
 
@@ -131,7 +130,7 @@
 @media (max-width: 480px) {
   .cards-grid {
     grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-    gap: 1.5rem;   
+    gap: 1.5rem;
   }
 
   .card {
