@@ -3,7 +3,7 @@
 :root {
   --color-bg: #0C0C1D;
   --color-darkblue: #1F2937;
-  --color-dark-gold: #CFAE65; 
+  --color-dark-gold: #CFAE65;
   --color-gold: #E6CFA8;
   --font-esoteric: 'Cinzel', serif;
   --font-legible: 'Cormorant Garamond', serif;
@@ -15,13 +15,6 @@ body {
   font-family: var(--font-legible);
   margin: 0;
   min-height: 100vh;
-}
-
-.container {
-  padding-top: 70px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding-bottom: 3rem;
 }
 
 body,
@@ -37,5 +30,3 @@ section,
 div {
   cursor: default;
 }
-
-
