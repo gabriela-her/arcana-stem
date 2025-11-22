@@ -35,7 +35,7 @@ export default function Home() {
           Cada carta revela un arquetipo…<br />
           y también la historia de una pionera cuyo impacto sigue iluminando nuestro mundo.</p>
         <p className="home-cta">
-          Toca una carta para comenzar tu viaje.</p>
+          Explora el mazo y comienza tu viaje.</p>
 
 
         <div className="cards-grid">
