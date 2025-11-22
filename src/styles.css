@@ -24,17 +24,18 @@ body {
   padding-bottom: 3rem;
 }
 
-/* Estrellas animadas de fondo */
-@keyframes twinkle {
-  0%, 100% { opacity: 0.8; }
-  50% { opacity: 0.2; }
+body,
+.appContainer,
+.appMain,
+.appHeader,
+.appFooter,
+section,
+.appContainer * {
+  user-select: none;
 }
 
-.star {
-  position: absolute;
-  background: white;
-  border-radius: 50%;
-  width: 3px;
-  height: 2px;
-  animation: twinkle 2s infinite ease-in-out;
+div {
+  cursor: default;
 }
+
+
