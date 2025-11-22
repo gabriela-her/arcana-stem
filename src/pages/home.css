@@ -1,6 +1,5 @@
 .home-section {
-  padding-top: 8rem;
-  /* deja espacio por el navbar fijo */
+  padding-top: 10rem;
   padding-bottom: 6rem;
   text-align: center;
 }
@@ -8,26 +7,53 @@
 .home-wrapper {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 1.5rem;
 }
 
 
-.home-section h1 {
+/* ------------------------------
+   Tipografías específicas Home
+------------------------------ */
+
+.home-title {
   font-family: var(--font-esoteric);
-  font-size: 2.5rem;
-  justify-content: center;
-  margin-bottom: 1rem;
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--color-gold);
-  font-family: cinzel;
+  text-shadow: 0 0 8px rgba(230, 207, 168, 0.25);
 }
 
-.home-section p {
-  font-size: 1.3rem;
-  margin-bottom: 4rem;
-  opacity: 0.9;
+.home-subtitle {
+  font-size: 1.4rem;
+  margin-bottom: 2.5rem;
+  opacity: 0.85;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  color: rgba(230, 207, 168, 0.9);
+  font-style: italic;
 }
+
+.home-description {
+  font-size: 1.2rem;
+  margin-bottom: 2.5rem;
+  opacity: 0.85;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.home-cta {
+  font-size: 1.3rem;
+  color: var(--color-gold);
+  margin-bottom: 4rem;
+  text-shadow: 0 0 10px rgba(230, 207, 168, 0.25);
+  font-family: var(--font-esoteric);
+}
+
 
 /* ------------------------------
    Grid de cartas
@@ -35,9 +61,10 @@
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-  gap: 3rem;
+  gap: 2rem;
   justify-content: center;
   justify-items: center;
+  padding-bottom: 8rem;
 
 
 }
@@ -76,9 +103,28 @@
 
 
 @media (max-width: 768px) {
+  .home-section {
+    padding-top: 8rem;
+  }
+
+  .home-title{ 
+    font-size: 2rem;
+  }
+
+  .home-subtitle{
+    font-size: 1.1rem;
+  }
+
+  .home-description{
+    font-size: 1rem;
+  }
+
+  .home-cta {
+    font-size: 1.1rem;
+  }
+
   .cards-grid {
     grid-template-columns: repeat(2, 1fr);
-    /* ✅ Aquí hacemos dos por fila */
   }
 }
 

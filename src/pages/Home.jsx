@@ -28,8 +28,15 @@ export default function Home() {
   return (
     <section className="home-section">
       <div className="home-wrapper">
-        <h1>Los secretos del Tarot</h1>
-        <p>Desvela cada carta y revela el misterio de lo desconocido</p>
+        <h1  className="home-title">EL TAROT DE LAS DIOSAS CONTEMPORÁNEAS</h1>
+        <p className="home-subtitle">Un viaje simbólico que conecta los arcanos del tarot<br />
+          con mujeres que transformaron la ciencia y la tecnología.</p>
+        <p className="home-description">
+          Cada carta revela un arquetipo…<br />
+          y también la historia de una pionera cuyo impacto sigue iluminando nuestro mundo.</p>
+        <p className="home-cta">
+          Toca una carta para comenzar tu viaje.</p>
+
 
         <div className="cards-grid">
           {cards.map((card) => (
