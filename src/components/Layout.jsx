@@ -30,7 +30,7 @@ function Stars() {
   const stars = Array.from({ length: 100 });
 
   return (
-    <>
+    <div className="starsContainer">
       {stars.map((_, i) => {
         const style = {
           top: `${Math.random() * 100}vh`,
@@ -49,7 +49,7 @@ function Stars() {
         };
         return <div key={i} className="star" style={style}></div>;
       })}
-    </>
+    </div>
   );
 }
 
