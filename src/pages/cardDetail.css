@@ -65,6 +65,39 @@
   margin-bottom: 1rem;
 }
 
+.back-button {
+  align-self: flex-start;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--color-gold);
+  border-radius: 6px;
+  color: var(--color-gold);
+  text-decoration: none;
+  font-family: var(--font-esoteric);
+  font-size: 1rem;
+  letter-spacing: 1px;
+  margin-top: 3rem; 
+  
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(3px);
+
+  transition: 
+    color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,   
+}
+
+.back-button:hover {
+  color: #f5d88c;
+  border-color: #f5d88c;
+  box-shadow: 0 0 12px rgba(230, 207, 168, 0.5);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+
 /* TITLES */
 .card-title {
   font-family: var(--font-esoteric);

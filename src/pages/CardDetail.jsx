@@ -28,23 +28,24 @@ export default function CardDetail() {
 
   return (
     <article className="card-detail">
-      <Link to="/" className="back-link">← Atrás</Link>
-
+      <Link to="/" className="back-button">
+        ← Volver
+      </Link>
       <div className="card-columns">
 
-        <div className="card-box">          
-          <img src={card.arcaneImage?.imageSrc} alt={card.arcaneName} loading="lazy"/>
+        <div className="card-box">
+          <img src={card.arcaneImage?.imageSrc} alt={card.arcaneName} loading="lazy" />
           <h1 className="card-title"> {card.arcaneName}</h1>
           <p className="arcane-subtitle">Arcano Mayor Nº {card.arcaneNumber}</p>
-          
+
 
           <ExpandableText text={card.arcaneDescription} maxLines={5} />
         </div>
 
-        <div className="card-box">       
-         
-            <img src={card.goddessImage.imageSrc} alt={card.goddessName} loading="lazy"/>
-          
+        <div className="card-box">
+
+          <img src={card.goddessImage.imageSrc} alt={card.goddessName} loading="lazy" />
+
           <h2 className="card-title">{card.goddessName}</h2>
           <p className="goddess-subtitle">Diosa Contemporánea</p>
 
