@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getCards } from '../services/tarotServices';
-import TarotCard from '../components/TarotCard';
+import { getCards } from '../../services/tarotServices';
+import TarotCard from '../../components/TarotCard';
 import './home.css';
 
 export default function Home() {

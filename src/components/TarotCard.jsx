@@ -1,4 +1,4 @@
-import cardBack from '../assets/card-back.png'
+import cardBack from '../assets/images/card-back.png'
 export default function TarotCard({ card, faceDown = true, onClick, className = '', style = {} }) 
  {
     //validacion 

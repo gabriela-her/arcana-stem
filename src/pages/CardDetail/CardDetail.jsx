@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { getCardById } from '../services/tarotServices';
-import ExpandableText from '../components/ExpandableText';
+import { getCardById } from '../../services/tarotServices';
+import ExpandableText from '../../components/ExpandableText/ExpandableText';
 import './cardDetail.css';
 
 export default function CardDetail() {
