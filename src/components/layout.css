@@ -169,7 +169,7 @@
   position: relative;
 }
 
-.footer-project {
+.footer-title {
   font-family: var(--font-esoteric);
   font-size: 1.3rem;
   margin-bottom: 0.3rem;
@@ -202,12 +202,12 @@
   text-shadow: 0 0 8px rgba(230, 207, 168, 0.5);
 }
 
-.footer-bottom {
+.footer-credits {
   font-size: 0.9rem;
   opacity: 0.8;
 }
 
-.footer-bottom .highlight {
+.footer-credits .highlight {
   color: var(--color-gold);
   font-family: var(--font-esoteric);
 }
