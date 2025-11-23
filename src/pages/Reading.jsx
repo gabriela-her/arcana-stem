@@ -58,8 +58,9 @@ export default function Reading() {
     };
 
     return (
-        <section>
-            <h1>Descubre lo que el destino guarda tras el velo de lo desconocido</h1>
+        <section className="reading-section">
+            <h1 className="reading-title">Descubre lo que el destino guarda tras el velo de lo desconocido</h1>
+            <p className="reading-subtitle">Elige tres cartas para revelar tu lectura del pasado, presente y futuro</p>
             {/* Mostrar error si hay */}
             {error && <p>Error: {error}</p>}
 
