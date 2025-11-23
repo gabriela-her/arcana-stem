@@ -148,7 +148,7 @@ export default function Reading() {
             </div>
 
             {/* Mazo estirado como en una mesa real*/}
-            <h2>"Elige tu camino: detrás de cada carta, una visión del destino… y una mente que cambió el mundo."</h2>
+            <h2 className="deck-subtitle">"Elige tu camino: cada carta es una mirada al destino"</h2>
             <div className="deck-spread">
                 {allCards
                     .filter(

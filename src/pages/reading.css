@@ -7,17 +7,25 @@
 .reading-title {
   font-family: var(--font-esoteric);
   color: var(--color-gold);
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
+  font-size: clamp(1.4rem, 4vw, 2.4rem);
+  margin-bottom: 0.8rem;
   letter-spacing: 1px;
+  text-shadow: 0 0 6px rgba(255, 225, 180, 0.4);
+  font-weight: 400;
+  line-height: 1.25;
+  padding: 0 1rem;
+
 }
 
 .reading-subtitle {
   color: rgba(230, 207, 168, 0.85);
-  font-size: 1.2rem;
-  max-width: 700px;
+  font-size: 1.1rem;
+  max-width: 600px;
   margin: 0 auto 2rem auto;
   line-height: 1.5;
+  padding: 0 1rem;
+  text-shadow: 0 0 4px rgba(255, 225, 180, 0.25);
+
 }
 
 .reading-subtitle strong {
@@ -194,31 +202,50 @@
    ANIMACIONES
 ============================ */
 
-@keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
 
-@keyframes slideUp {
-  from { transform: translateY(20px); opacity:0; }
-  to { transform: translateY(0); opacity:1; }
+  to {
+    opacity: 1;
+  }
 }
 
-/* Botones revelar lectura y reinicar lectura */
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ============================
+   BOTONES
+=========================== */
 .reading-buttons {
   display: flex;
   justify-content: center;
-  gap: 1rem;
-  margin-top: 3rem;
+  gap: 1.2rem;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
 }
 
 .reading-buttons button {
-  background-color: var(--color-dark-gold);
-  color: black;
-  border: none;
-  padding: 0.75rem 1.5rem;
   font-family: var(--font-esoteric);
   font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  min-width: 150px;
+  background-color: var(--color-dark-gold);
+  color: black;
+  border: 1px solid var(--color-gold);
   cursor: pointer;
-  border-radius: 6px;
-  transition: background-color 0.3s ease;
+  border-radius: 10px;
+  transition: all 0.25s ease;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
 }
 
@@ -231,13 +258,17 @@
   cursor: not-allowed;
 }
 
-/* Subtitulo */
-h2 {
-  text-align: center;
-  margin-top: 2rem;
-  font-size: 1.2rem;
-}
+/* subtitulo del mazo */
+.deck-subtitle {
+  color: rgba(230, 207, 168, 0.85);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+  line-height: 1.5;
+  padding-top: 2rem;
+  text-shadow: 0 0 4px rgba(255, 225, 180, 0.25);
 
+}
 
 /* Mazo extendido */
 .deck-spread {
@@ -316,13 +347,14 @@ h2 {
   }
 }
 
+/*desaparece la imagen en movil */
 @media (max-width: 480px) {
   .modal-card {
     padding: 1rem;
     max-width: 95vw;
   }
 
-   .modal-image {
+  .modal-image {
     display: none;
   }
 
@@ -337,5 +369,18 @@ h2 {
 
   .modal-text p {
     font-size: 0.95rem;
+  }
+}
+
+/* Botones en móvil  */
+@media (max-width: 550px) {
+  .reading-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .reading-buttons button {
+    width: 60%;
   }
 }
