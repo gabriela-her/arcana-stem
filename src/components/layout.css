@@ -78,14 +78,50 @@
 }
 
 
+/* =============================
+   CONSTELLATIONS PREMIUM STYLE
+============================= */
 
-footer {
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.8rem;
-  border-top: 1px solid var(--color-gold);
+.constellations-svg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: -2; /* debajo de todo */
+  opacity: 0.35; /* sutil, elegante */
 }
 
+.constellation-line {
+  stroke: rgba(230, 207, 168, 0.25);
+  stroke-width: 1.2;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 4px rgba(230, 207, 168, 0.4));
+  animation: floatLine 6s ease-in-out infinite alternate;
+}
+
+.constellation-star {
+  fill: rgba(255, 255, 255, 0.9);
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.7));
+  animation: twinkleStar 3s ease-in-out infinite alternate;
+}
+
+/* Animación de estrella */
+@keyframes twinkleStar {
+  0% { opacity: 0.6; r: 1.8; }
+  50% { opacity: 1; r: 2.4; }
+  100% { opacity: 0.6; r: 1.8; }
+}
+
+/* Ligero flotado de líneas */
+@keyframes floatLine {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-4px); }
+}
+
+
+/* Estrellas del background */
 .starsContainer {
   position: fixed;
   top: 0;
@@ -112,4 +148,11 @@ footer {
   50% {
     opacity: 0.2;
   }
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.8rem;
+  border-top: 1px solid var(--color-gold);
 }
