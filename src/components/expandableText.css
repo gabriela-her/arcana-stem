@@ -1,0 +1,36 @@
+.expandable-text {
+  margin-top: 1rem;
+  position: relative;
+}
+
+.expandable-text-content {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.expanded .expandable-text-content {
+  opacity: 1;
+}
+
+.expand-toggle {
+  margin-top: 0.5rem;
+  background: none;
+  border: none;
+  color: var(--color-gold);
+  font-family: var(--font-legible);
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  opacity: 0.85;
+  transition: opacity 0.3s ease, text-shadow 0.3s ease;
+}
+
+.expand-toggle:hover {
+  opacity: 1;
+  text-shadow: 0 0 12px rgba(230,207,168,0.6);
+}
