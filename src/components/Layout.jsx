@@ -11,7 +11,7 @@ export default function Layout() {
         <Link to="/" className="brand">Home</Link>
         <nav className="nav" role="navigation" aria-label="Main Navigation">
           {/* <NavLink to="/" end className={({ isActive }) => isActive ? 'active' : ''}>Cards</NavLink> */}
-          <NavLink to="/reading" className={({ isActive }) => isActive ? 'active' : ''}>LECTURA</NavLink>
+          <NavLink to="/reading" className={({ isActive }) => isActive ? 'active' : ''}>Lectura</NavLink>
         </nav>
       </header>
 

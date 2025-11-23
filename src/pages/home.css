@@ -136,10 +136,11 @@
 @media (max-width: 768px) {
   .home-section {
     padding-top: 8rem;
+    padding-top: calc(var(--navbar-height) - 10px)
   }
 
   .home-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .home-subtitle {
@@ -163,6 +164,7 @@
   .cards-grid {
     grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
     gap: 1.5rem;
+
   }
 
   .card {
