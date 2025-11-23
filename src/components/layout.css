@@ -1,3 +1,18 @@
+/* =====================================
+   LAYOUT WRAPPER GLOBAL
+===================================== */
+
+.layout-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.appMain {
+  min-height: 100vh;
+  display: block;
+}
+
 .navbar {
   position: fixed;
   top: 0; left: 0; right: 0;

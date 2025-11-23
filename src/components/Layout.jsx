@@ -16,6 +16,7 @@ export default function Layout() {
       </header>
 
       <main className="appMain" role="main">
+          <div className="layout-wrapper"></div>
         <Outlet />
       </main>
 
