@@ -235,3 +235,25 @@
   text-shadow: 0 0 10px rgba(230, 207, 168, 0.6);
   opacity: 1;
 }
+
+/* Responsive*/
+@media (max-width: 480px) {
+  .appHeader {
+    flex-direction: row; 
+    justify-content: space-between;
+    padding: 0.6rem; 
+         
+  }
+
+    .brand {
+    font-size: 1rem;
+  }
+
+  .nav {
+    justify-content: right;
+  }
+
+  .nav a {
+    font-size: 1rem;
+  }
+}

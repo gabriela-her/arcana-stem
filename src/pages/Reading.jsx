@@ -11,14 +11,10 @@ export default function Reading() {
         future: null,
     });
 
-    // almacenar todas las cartas obtenidas de la API
     const [allCards, setAllCards] = useState([]);
-
-    // manejar posibles errores al cargar las cartas
     const [error, setError] = useState(null);
-
-    // si las cartas seleccionadas están reveladas (boca arriba) o boca abajo
     const [revealed, setRevealed] = useState(false);
+    const [openedCard, setOpenedCard] = useState(null);
 
     // cargar las cartas al montar el componente
     useEffect(() => {
@@ -58,65 +54,111 @@ export default function Reading() {
     };
 
     return (
-        <section>
-            <h1>Descubre lo que el destino guarda tras el velo de lo desconocido</h1>
+        <section className="reading-section">
+            <h1 className="reading-title">Descubre lo que el destino guarda tras el velo de lo desconocido</h1>
+            <p className="reading-subtitle">Elige tres cartas para revelar tu lectura del pasado, presente y futuro</p>
             {/* Mostrar error si hay */}
             {error && <p>Error: {error}</p>}
 
             {/* Slots para las cartas seleccionadas */}
             <div className="reading-slots">
-                <div>
+
+                {/* PASADO */}
+                <div className={`slot ${selectedCards.past ? 'filled' : 'empty'}`}>
                     <h3>Pasado</h3>
-                    {selectedCards.past ? (
-                        // Mostrar carta seleccionada, boca abajo si aún no se reveló
-                        <TarotCard card={selectedCards.past} faceDown={!revealed} />
-                    ) : (
-                        <p>Elige</p>
-                    )}
+                    <div className="slot-content">
+                        {selectedCards.past ? (
+                            <TarotCard
+                                card={selectedCards.past} faceDown={!revealed}
+                                className="slot-card"
+                                onClick={() => revealed && setOpenedCard(selectedCards.past)} />
+                        ) : (
+                            <p className="slot-placeholder">Elige</p>
+                        )}
+                    </div>
                 </div>
-                <div>
+
+                {/* PRESENTE */}
+                <div className={`slot ${selectedCards.present ? 'filled' : 'empty'}`}>
                     <h3>Presente</h3>
-                    {selectedCards.present ? (
-                        <TarotCard card={selectedCards.present} faceDown={!revealed} />
-                    ) : (
-                        <p>Elige</p>
-                    )}
+                    <div className="slot-content">
+                        {selectedCards.present ? (
+                            <TarotCard
+                                card={selectedCards.present} faceDown={!revealed}
+                                className="slot-card"
+                                onClick={() => revealed && setOpenedCard(selectedCards.present)} />
+                        ) : (
+                            <p className="slot-placeholder">Elige</p>
+                        )}
+                    </div>
                 </div>
-                <div>
+
+                {/* FUTURO */}
+                <div className={`slot ${selectedCards.future ? 'filled' : 'empty'}`}>
                     <h3>Futuro</h3>
-                    {selectedCards.future ? (
-                        <TarotCard card={selectedCards.future} faceDown={!revealed} />
-                    ) : (
-                        <p>Elige</p>
-                    )}
+                    <div className="slot-content">
+                        {selectedCards.future ? (
+                            <TarotCard
+                                card={selectedCards.future} faceDown={!revealed}
+                                className="slot-card"
+                                onClick={() => revealed && setOpenedCard(selectedCards.future)} />
+                        ) : (
+                            <p className="slot-placeholder">Elige</p>
+                        )}
+                    </div>
                 </div>
+                {/* MODAL DE INFORMACIÓN DE LA CARTA */}
+                {openedCard && (
+                    <div className="modal-overlay" onClick={() => setOpenedCard(null)}>
+                        <div className="modal-card" onClick={(e) => e.stopPropagation()}>
+
+                            <div className="modal-body">
+                                <img
+                                    className="modal-image"
+                                    src={openedCard.arcaneImage?.imageSrc}
+                                    alt={openedCard.arcaneName}
+                                />
+
+                                <div className="modal-text">
+                                    <h2>{openedCard.arcaneName}</h2>
+                                    <p>{openedCard.arcaneDescription}</p>
+                                </div>
+                            </div>
+
+                            <button className="modal-close" onClick={() => setOpenedCard(null)}>
+                                Cerrar
+                            </button>
+                        </div>
+                    </div>
+                )}
+
             </div>
 
             <div className="reading-buttons">
-  <button
-    onClick={handleReveal}
-    disabled={
-      revealed || Object.values(selectedCards).some((v) => v === null)
-    }
-  >
-    Desvelar lectura
-  </button>
+                <button
+                    onClick={handleReveal}
+                    disabled={
+                        revealed || Object.values(selectedCards).some((v) => v === null)
+                    }
+                >
+                    Desvelar lectura
+                </button>
 
-  <button onClick={resetReading}>Reiniciar Lectura</button>
-</div>
+                <button onClick={resetReading}>Reiniciar Lectura</button>
+            </div>
 
             {/* Mazo estirado como en una mesa real*/}
-            <h2>"Elige tu camino: detrás de cada carta, una visión del destino… y una mente que cambió el mundo."</h2>
+            <h2 className="deck-subtitle">"Elige tu camino: cada carta es una mirada al destino"</h2>
             <div className="deck-spread">
                 {allCards
-                .filter(
-                    (card) =>
-                        selectedCards.past?.id !== card.id &&
-                        selectedCards.present?.id !== card.id &&
-                        selectedCards.future?.id !== card.id
-                )
-                
-                .map((card, index) =>  (
+                    .filter(
+                        (card) =>
+                            selectedCards.past?.id !== card.id &&
+                            selectedCards.present?.id !== card.id &&
+                            selectedCards.future?.id !== card.id
+                    )
+
+                    .map((card, index) => (
                         <TarotCard
                             key={card.id}
                             card={card}
@@ -126,7 +168,7 @@ export default function Reading() {
                             style={{ '--index': index }} // Para rotación opcional
                         />
                     )
-                )}
+                    )}
             </div>
 
         </section>

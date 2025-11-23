@@ -1,50 +1,252 @@
-/* styles/reading.css */
+.reading-section {
+  text-align: center;
+  margin-top: 1rem;
+  padding: 2rem 1rem;
+}
+
+.reading-title {
+  font-family: var(--font-esoteric);
+  color: var(--color-gold);
+  font-size: clamp(1.4rem, 4vw, 2.4rem);
+  margin-bottom: 0.8rem;
+  letter-spacing: 1px;
+  text-shadow: 0 0 6px rgba(255, 225, 180, 0.4);
+  font-weight: 400;
+  line-height: 1.25;
+  padding: 0 1rem;
+
+}
+
+.reading-subtitle {
+  color: rgba(230, 207, 168, 0.85);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+  line-height: 1.5;
+  padding: 0 1rem;
+  text-shadow: 0 0 4px rgba(255, 225, 180, 0.25);
+
+}
+
+.reading-subtitle strong {
+  color: var(--color-gold);
+}
+
+.reading-error {
+  color: #ff9090;
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+/* ============================
+   READING SLOTS
+============================ */
 
 .reading-slots {
   display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  gap: 2rem;
+  justify-content: center;
+  gap: 3rem;
   flex-wrap: wrap;
-  margin: 2rem 0;
+  margin-top: 3rem;
+  flex-wrap: nowrap;
+  /* <-- importante */
 }
 
-.reading-slots > div {
+.slot {
+  width: 200px;
+  height: 320px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(230, 207, 168, 0.4);
+  border-radius: 14px;
+  padding: 1rem;
+  text-align: center;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  background-color: rgba(128, 128, 128, 0.251);
-  border-radius: 12px;
-  height: 280px;
-  width: 160px;
+  justify-content: flex-start;
 }
 
-.reading-slots h2 {
+.slot h3 {
+  font-family: var(--font-esoteric);
+  color: var(--color-gold);
+  margin-bottom: 0.5rem;
+}
+
+.slot.empty {
+  border-style: dashed;
+  opacity: 0.75;
+}
+
+.slot.filled {
+  border-style: solid;
+  border-color: var(--color-gold);
+  box-shadow: 0 0 18px rgba(230, 207, 168, 0.4);
+}
+
+.slot-content {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slot-placeholder {
+  font-size: 1.1rem;
+  opacity: 0.8;
+}
+
+.slot-card {
+  transform: scale(0.9);
+  transition: transform 0.35s ease;
+}
+
+.slot.filled .slot-card {
+  transform: scale(1);
+}
+
+/* ============================
+   MODAL OVERLAY
+============================ */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 1rem;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-card {
+  background: rgba(15, 15, 25, 0.95);
+  border: 1px solid var(--color-gold);
+  padding: 1.5rem;
+  border-radius: 14px;
+  max-width: 760px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  color: white;
+  box-shadow: 0 0 25px rgba(230, 207, 168, 0.3);
+  animation: slideUp 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ============================
+   IMAGEN + TEXTO (DESKTOP)
+============================ */
+.modal-body {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-end;
+}
+
+/* Imagen */
+.modal-image {
+  width: 30%;
+  max-height: 75vh;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(230, 207, 168, 0.25);
+}
+
+/* Texto */
+.modal-text {
+  width: 60%;
+  text-align: left;
+}
+
+.modal-text h2 {
   font-family: var(--font-esoteric);
   color: var(--color-gold);
   margin-bottom: 1rem;
-  align-items: center;
+  font-size: 1.7rem;
 }
 
+.modal-text p {
+  font-family: var(--font-legible);
+  line-height: 1.6;
+  opacity: 0.95;
+  font-size: 1rem;
+}
+
+/* Botón cerrar */
+.modal-close {
+  margin-top: 1rem;
+  background: var(--color-gold);
+  color: black;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-family: var(--font-esoteric);
+  cursor: pointer;
+  align-self: center;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modal-close:hover {
+  background: #f5d88c;
+  box-shadow: 0 0 12px rgba(230, 207, 168, 0.6);
+}
+
+/* ============================
+   ANIMACIONES
+============================ */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ============================
+   BOTONES
+=========================== */
 .reading-buttons {
   display: flex;
   justify-content: center;
-  gap: 1rem;
-  margin-top: 3rem;
+  gap: 1.2rem;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
 }
 
 .reading-buttons button {
-  background-color: var(--color-dark-gold);
-  color: black;
-  border: none;
-  padding: 0.75rem 1.5rem;
   font-family: var(--font-esoteric);
   font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  min-width: 150px;
+  background-color: var(--color-dark-gold);
+  color: black;
+  border: 1px solid var(--color-gold);
   cursor: pointer;
-  border-radius: 6px;
-  transition: background-color 0.3s ease;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  transition: all 0.25s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
 }
 
 .reading-buttons button:hover:not(:disabled) {
@@ -56,12 +258,19 @@
   cursor: not-allowed;
 }
 
-h2 {
-  text-align: center;
-  margin-top: 2rem;
-  font-size: 1.2rem; 
+/* subtitulo del mazo */
+.deck-subtitle {
+  color: rgba(230, 207, 168, 0.85);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+  line-height: 1.5;
+  padding-top: 2rem;
+  text-shadow: 0 0 4px rgba(255, 225, 180, 0.25);
+
 }
 
+/* Mazo extendido */
 .deck-spread {
   display: flex;
   justify-content: center;
@@ -69,62 +278,109 @@ h2 {
   gap: 0;
   padding: 3rem 2rem;
   overflow-x: auto;
+  overflow-y: hidden;
   position: relative;
+  max-width: 100%;
 }
 
 .deck-spread .card {
   position: relative;
-  margin-left: -100px; /* Superposición */
+  margin-left: -90px;
+  /* Superposición */
   transition: transform 0.3s ease, z-index 0.3s ease;
-  transform: rotate(calc(-3deg + var(--index) * 0.3deg)); /* rotación opcional */
+  transform: rotate(calc(-3deg + var(--index) * 0.4deg));
+  z-index: 1;
 }
 
 .deck-spread .card:hover {
-transform: translate(-40) scale(1.05);
-z-index: 5;
+  transform: rotate(calc(-3deg + var(--index) * 0.3deg)) translateY(-12px);
+  filter: brightness(1.3);
 }
+
 .deck-spread .card:first-child {
   margin-left: 0;
 }
 
-.deck-spread .card.selected {
-  transform: translateY(-40px) scale(1.05);
-  z-index: 10;
+@media (max-width: 600px) {
+
+  .reading-slots {
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0 0.5rem;
+  }
+
+  .slot {
+    width: 100px;
+    height: 200px;
+    padding: 0.5rem;
+  }
+
+  .slot h3 {
+    font-size: 0.9rem;
+  }
+
+  .slot-placeholder {
+    font-size: 0.8rem;
+  }
+
+  .slot-content img,
+  .slot-card {
+    width: 100%;
+    height: auto;
+  }
+
+  .deck-spread {
+    display: flex;
+    gap: 0.4rem;
+    overflow-x: auto;
+    padding: 1rem;
+    justify-content: flex-start;
+  }
+
+  .deck-spread .card {
+    margin-left: 0;
+    transform: none;
+    width: 90px;
+    height: 150px;
+    flex-shrink: 0;
+  }
 }
 
-@media (max-width: 600px) {
+/*desaparece la imagen en movil */
+@media (max-width: 480px) {
+  .modal-card {
+    padding: 1rem;
+    max-width: 95vw;
+  }
+
+  .modal-image {
+    display: none;
+  }
+
+  .modal-text {
+    width: 100%;
+    text-align: center;
+  }
+
+  .modal-text h2 {
+    font-size: 1.3rem;
+  }
+
+  .modal-text p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Botones en móvil  */
+@media (max-width: 550px) {
   .reading-buttons {
     flex-direction: column;
     align-items: center;
-    gap: 0.75rem;
+    gap: 1rem;
   }
 
-  h1{
-    font-size: 1.4rem;
-  }
   .reading-buttons button {
-    font-size: 0.85rem;
-    padding: 0.5rem 1rem;
-    width: 80%; /* o 100% si quieres que ocupen todo el ancho disponible */
-  }
-
-  .reading-slots > div {
-    width: 130px;
-    height: 240px;
-  }
-
-  .deck-spread {
-    padding: 2rem 0.5rem;
-  }
-
-  h2 {
-    font-size: 1rem;
-    margin-top: 1.5rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .deck-spread {
-    padding: 2rem 1.5rem;
+    width: 60%;
   }
 }
