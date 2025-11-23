@@ -14,6 +14,7 @@ export default function Reading() {
     const [allCards, setAllCards] = useState([]);
     const [error, setError] = useState(null);
     const [revealed, setRevealed] = useState(false);
+    const [openedCard, setOpenedCard] = useState(null);
 
     // cargar las cartas al montar el componente
     useEffect(() => {
@@ -69,7 +70,8 @@ export default function Reading() {
                         {selectedCards.past ? (
                             <TarotCard
                                 card={selectedCards.past} faceDown={!revealed}
-                                className="slot-card" />
+                                className="slot-card"
+                                onClick={() => revealed && setOpenedCard(selectedCards.past)} />
                         ) : (
                             <p className="slot-placeholder">Elige</p>
                         )}
@@ -81,11 +83,12 @@ export default function Reading() {
                     <h3>Presente</h3>
                     <div className="slot-content">
                         {selectedCards.present ? (
-                           <TarotCard
-                            card={selectedCards.present} faceDown={!revealed}
-                            className="slot-card" />
-                            ) : (
-                                <p className="slot-placeholder">Elige</p>
+                            <TarotCard
+                                card={selectedCards.present} faceDown={!revealed}
+                                className="slot-card"
+                                onClick={() => revealed && setOpenedCard(selectedCards.present)} />
+                        ) : (
+                            <p className="slot-placeholder">Elige</p>
                         )}
                     </div>
                 </div>
@@ -97,12 +100,26 @@ export default function Reading() {
                         {selectedCards.future ? (
                             <TarotCard
                                 card={selectedCards.future} faceDown={!revealed}
-                                className="slot-card" />
+                                className="slot-card"
+                                onClick={() => revealed && setOpenedCard(selectedCards.future)} />
                         ) : (
                             <p className="slot-placeholder">Elige</p>
                         )}
                     </div>
                 </div>
+                {/* MODAL DE INFORMACIÓN DE LA CARTA */}
+                {openedCard && (
+                    <div className="modal-overlay" onClick={() => setOpenedCard(null)}>
+                        <div className="modal-card" onClick={(e) => e.stopPropagation()}>
+                            <h2>{openedCard.arcano}</h2>
+                            <img src={openedCard.image} alt={openedCard.arcano} />
+                            <p><strong>Diosa:</strong> {openedCard.goddess}</p>
+                            <p>{openedCard.description}</p>
+
+                            <button onClick={() => setOpenedCard(null)}>Cerrar</button>
+                        </div>
+                    </div>
+                )}
             </div>
 
             <div className="reading-buttons">
