@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { getCards } from '../services/tarotServices.js';
-import TarotCard from '../components/TarotCard.jsx';
+import { getCards } from "../../services/tarotServices.js";
+import TarotCard from '../../components/TarotCard.jsx';
 import './reading.css';
 
 export default function Reading() {
