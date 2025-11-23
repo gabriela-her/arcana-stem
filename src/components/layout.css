@@ -150,9 +150,88 @@
   }
 }
 
-footer {
+/* =============================
+            Footer
+============================= */
+.appFooter {
+  padding: 1rem 1rem;
   text-align: center;
-  padding: 1rem;
-  font-size: 0.8rem;
-  border-top: 1px solid var(--color-gold);
+  color: rgba(230, 207, 168, 0.75);
+  font-family: var(--font-legible);
+  background: linear-gradient(
+    to bottom,
+    rgba(12, 12, 29, 0) 0%,
+    rgba(12, 12, 29, 0.7) 20%,
+    rgba(12, 12, 29, 1) 50%
+  );
+  border-top: 1px solid rgba(230, 207, 168, 0.25);
+  margin-top: 4rem;
+  position: relative;
+}
+
+.footer-project {
+  font-family: var(--font-esoteric);
+  font-size: 1.3rem;
+  margin-bottom: 0.3rem;
+  color: var(--color-gold);
+}
+
+.footer-desc {
+  font-size: 1rem;
+  opacity: 0.75;
+  margin-bottom: 1.8rem;
+}
+
+.footer-links {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.footer-links a {
+  color: var(--color-gold);
+  text-decoration: none;
+  font-family: var(--font-legible);
+  font-size: 1rem;
+  transition: opacity 0.3s ease, text-shadow 0.3s ease;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+  text-shadow: 0 0 8px rgba(230, 207, 168, 0.5);
+}
+
+.footer-bottom {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.footer-bottom .highlight {
+  color: var(--color-gold);
+  font-family: var(--font-esoteric);
+}
+
+/* link de factoria */
+.factoria-link, 
+.footer-apiLink {
+  color: var(--color-gold);
+  text-decoration: none;
+}
+
+.factoria-link:hover {
+  text-shadow: 0 0 8px rgba(230, 207, 168, 0.5);
+}
+
+/*mi link */
+.footer-author {
+  color: var(--color-gold);
+  font-family: var(--font-esoteric);
+  text-decoration: none;
+  transition: text-shadow 0.3s ease, opacity 0.3s ease;
+}
+
+.footer-author:hover {
+  text-shadow: 0 0 10px rgba(230, 207, 168, 0.6);
+  opacity: 1;
 }

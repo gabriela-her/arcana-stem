@@ -18,12 +18,43 @@ export default function Layout() {
       </header>
 
       <main className="appMain" role="main">
-          <div className="layout-wrapper"></div>
+        <div className="layout-wrapper"></div>
         <Outlet />
       </main>
 
-      <footer className="appFooter" role="contentinfo">
-        <small>Proyecto realizado en el bootcamp de desarrollo web FemCoders - FactoriaF5</small>
+      <footer className="appFooter">
+        <div className="footer-top">
+          <p className="footer-project">Tarot de las Diosas Contemporáneas</p>
+          <p className="footer-desc">Un proyecto educativo que conecta simbolismo, historia y tecnología.</p>
+        </div>
+
+        <div className="footer-links">
+          <a href="/">Home</a>
+          <a href="/reading">Lectura</a>
+          <a href="https://github.com//gabriela-her/arcana-stem" target="_blank">GitHub</a>
+        </div>
+
+        <div className="footer-bottom">
+          <p>Desarrollado por <span className="highlight">
+            <a
+              href="https://www.linkedin.com/in/TU_USUARIO/"
+              target="_blank"
+              rel="noreferrer"
+              className="footer-author"
+            >Arianna Gabriela Hernandez Berbesi</a></span> · Bootcamp FemCoders   <a href="https://factoriaf5.org" target="_blank" rel="noreferrer"
+              className="factoria-link"> Factoría F5</a>
+              <br />
+            <a
+              href="https://6872278c76a5723aacd3cbb3.mockapi.io/api/v1/tarot"
+              target="_blank"
+              rel="noreferrer"
+              className="footer-apiLink"
+            >
+              API creada por el equipo de Factoría F5 Barcelona.
+            </a>
+          </p>
+          <small>© 2025 · Todos los derechos reservados</small>
+        </div>
       </footer>
     </div>
   );
