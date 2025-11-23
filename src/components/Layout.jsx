@@ -1,6 +1,6 @@
 import { Link, NavLink, Outlet } from 'react-router-dom';
 import './layout.css';
-import Constellations from './constellations';
+import Constellations from './Constellations.jsx';
 
 export default function Layout() {
   return (
