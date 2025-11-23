@@ -40,7 +40,8 @@
   gap: 3rem;
   flex-wrap: wrap;
   margin-top: 3rem;
-  flex-wrap: nowrap;   /* <-- importante */
+  flex-wrap: nowrap;
+  /* <-- importante */
 }
 
 .slot {
@@ -99,32 +100,105 @@
   transform: scale(1);
 }
 
-/*  Modal detalle de carta */
+/* ============================
+   MODAL OVERLAY
+============================ */
 .modal-overlay {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 999;
+  z-index: 9999;
+  padding: 1rem;
+  animation: fadeIn 0.3s ease;
 }
 
 .modal-card {
-  background: #111;
+  background: rgba(15, 15, 25, 0.95);
   border: 1px solid var(--color-gold);
-  padding: 2rem;
-  border-radius: 12px;
-  max-width: 400px;
-  text-align: center;
+  padding: 1.5rem;
+  border-radius: 14px;
+  max-width: 760px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
   color: white;
-  box-shadow: 0 0 20px rgba(255, 224, 150, 0.3);
+  box-shadow: 0 0 25px rgba(230, 207, 168, 0.3);
+  animation: slideUp 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-.modal-card img {
-  width: 100%;
+/* ============================
+   IMAGEN + TEXTO (DESKTOP)
+============================ */
+.modal-body {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-end;
+}
+
+/* Imagen */
+.modal-image {
+  width: 30%;
+  max-height: 75vh;
+  object-fit: cover;
   border-radius: 10px;
+  box-shadow: 0 0 15px rgba(230, 207, 168, 0.25);
+}
+
+/* Texto */
+.modal-text {
+  width: 60%;
+  text-align: left;
+}
+
+.modal-text h2 {
+  font-family: var(--font-esoteric);
+  color: var(--color-gold);
   margin-bottom: 1rem;
+  font-size: 1.7rem;
+}
+
+.modal-text p {
+  font-family: var(--font-legible);
+  line-height: 1.6;
+  opacity: 0.95;
+  font-size: 1rem;
+}
+
+/* Botón cerrar */
+.modal-close {
+  margin-top: 1rem;
+  background: var(--color-gold);
+  color: black;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-family: var(--font-esoteric);
+  cursor: pointer;
+  align-self: center;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modal-close:hover {
+  background: #f5d88c;
+  box-shadow: 0 0 12px rgba(230, 207, 168, 0.6);
+}
+
+/* ============================
+   ANIMACIONES
+============================ */
+
+@keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity:0; }
+  to { transform: translateY(0); opacity:1; }
 }
 
 /* Botones revelar lectura y reinicar lectura */
@@ -206,8 +280,8 @@ h2 {
   }
 
   .slot {
-    width: 100px;      
-    height: 200px;     
+    width: 100px;
+    height: 200px;
     padding: 0.5rem;
   }
 
@@ -222,7 +296,7 @@ h2 {
   .slot-content img,
   .slot-card {
     width: 100%;
-    height: auto;    
+    height: auto;
   }
 
   .deck-spread {
@@ -239,5 +313,29 @@ h2 {
     width: 90px;
     height: 150px;
     flex-shrink: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-card {
+    padding: 1rem;
+    max-width: 95vw;
+  }
+
+   .modal-image {
+    display: none;
+  }
+
+  .modal-text {
+    width: 100%;
+    text-align: center;
+  }
+
+  .modal-text h2 {
+    font-size: 1.3rem;
+  }
+
+  .modal-text p {
+    font-size: 0.95rem;
   }
 }

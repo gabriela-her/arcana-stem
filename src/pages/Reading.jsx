@@ -111,15 +111,27 @@ export default function Reading() {
                 {openedCard && (
                     <div className="modal-overlay" onClick={() => setOpenedCard(null)}>
                         <div className="modal-card" onClick={(e) => e.stopPropagation()}>
-                            <h2>{openedCard.arcano}</h2>
-                            <img src={openedCard.image} alt={openedCard.arcano} />
-                            <p><strong>Diosa:</strong> {openedCard.goddess}</p>
-                            <p>{openedCard.description}</p>
 
-                            <button onClick={() => setOpenedCard(null)}>Cerrar</button>
+                            <div className="modal-body">
+                                <img
+                                    className="modal-image"
+                                    src={openedCard.arcaneImage?.imageSrc}
+                                    alt={openedCard.arcaneName}
+                                />
+
+                                <div className="modal-text">
+                                    <h2>{openedCard.arcaneName}</h2>
+                                    <p>{openedCard.arcaneDescription}</p>
+                                </div>
+                            </div>
+
+                            <button className="modal-close" onClick={() => setOpenedCard(null)}>
+                                Cerrar
+                            </button>
                         </div>
                     </div>
                 )}
+
             </div>
 
             <div className="reading-buttons">
