@@ -30,31 +30,72 @@
   font-size: 1rem;
 }
 
+/* ============================
+   READING SLOTS
+============================ */
+
 .reading-slots {
   display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  gap: 2rem;
+  justify-content: center;  
+  gap: 3rem;
   flex-wrap: wrap;
-  margin: 2rem 0;
+  margin-top: 3rem;
 }
 
-.reading-slots > div {
+.slot {
+  width: 200px;
+  height: 320px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(230, 207, 168, 0.4);
+  border-radius: 14px;
+  padding: 1rem;
+  text-align: center;
+  transition: 
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  background-color: rgba(128, 128, 128, 0.251);
-  border-radius: 12px;
-  height: 280px;
-  width: 160px;
+  justify-content: flex-start;
 }
 
-.reading-slots h2 {
+.slot h3 {
   font-family: var(--font-esoteric);
   color: var(--color-gold);
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.slot.empty {
+  border-style: dashed;
+  opacity: 0.75;
+}
+
+.slot.filled {
+  border-style: solid;
+  border-color: var(--color-gold);
+  box-shadow: 0 0 18px rgba(230, 207, 168, 0.4);
+}
+
+.slot-content {
+  flex-grow: 1;
+  display: flex;
   align-items: center;
+  justify-content: center;
+}
+
+.slot-placeholder {
+  font-size: 1.1rem;
+  opacity: 0.8;
+}
+
+.slot-card {
+  transform: scale(0.9);
+  transition: transform 0.35s ease;
+}
+
+.slot.filled .slot-card {
+  transform: scale(1);
 }
 
 .reading-buttons {
@@ -122,39 +163,4 @@ z-index: 5;
   z-index: 10;
 }
 
-@media (max-width: 600px) {
-  .reading-buttons {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
-  }
 
-  h1{
-    font-size: 1.4rem;
-  }
-  .reading-buttons button {
-    font-size: 0.85rem;
-    padding: 0.5rem 1rem;
-    width: 80%; /* o 100% si quieres que ocupen todo el ancho disponible */
-  }
-
-  .reading-slots > div {
-    width: 130px;
-    height: 240px;
-  }
-
-  .deck-spread {
-    padding: 2rem 0.5rem;
-  }
-
-  h2 {
-    font-size: 1rem;
-    margin-top: 1.5rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .deck-spread {
-    padding: 2rem 1.5rem;
-  }
-}
