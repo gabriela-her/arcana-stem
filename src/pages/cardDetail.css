@@ -7,14 +7,41 @@
   margin: 0 auto;
 }
 
+.back-link {
+  align-self: flex-start;
+  color: var(--color-gold);
+  text-decoration: none;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.back-link::before {
+  content: "←";
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+  color: var(--color-gold);
+  transition: color 0.3s ease;
+}
+
+.back-link:hover,
+.back-link:hover::before {
+  color: #f5d88c;
+}
+
+/* =============================
+   LAYOUT COLUMNS
+============================= */
+
 .card-columns {
   display: flex;
-  flex-direction: row;
-  gap: 2rem;
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 2rem;
   align-items: stretch;
+  gap: 2rem;
 }
 
 .card-box {
@@ -24,7 +51,7 @@
   border: 1px solid var(--color-gold);
   color: white;
   width: 100%;
-  max-width: 380px;
+  max-width: 300px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
@@ -32,52 +59,23 @@
 
 .card-box img {
   width: 100%;
-  height: auto;
+  height: 500px;
+  object-fit: cover;
   border-radius: 4px;
   margin-bottom: 1rem;
 }
 
-.card-box h1,
-.card-box h2 {
+/* TITLES */
+.card-title {
   font-family: var(--font-esoteric);
   color: var(--color-gold);
-  margin-top: 0;
+  margin: 0 0 0.5rem;
+  letter-spacing: 1px;
+  font-size: 1.5rem;
 }
 
-.card-box p {
-  font-family: var(--font-legible);
+.goddess-subtitle,
+.arcane-subtitle
+ {
   font-size: 1rem;
-  line-height: 1.6;
-}
-
-.card-detail a {
-  align-self: flex-start;
-  color: var(--color-gold);
-  text-decoration: none;
-  font-size: 1rem;
-  margin-bottom: 1rem;
-  display: inline-flex;
-  align-items: center;
-  position: relative;
-  transition: color 0.3s ease;
-}
-
-/* Flecha antes del texto */
-.card-detail a::before {
-  content: "←"; /* Flecha Unicode */
-  margin-right: 0.5rem;
-  font-size: 1.2rem;
-  position: relative;
-  top: 1px;
-  color: var(--color-gold);
-  transition: color 0.3s ease;
-}
-
-/* Hover cambia el color del texto y la flecha */
-.card-detail a:hover {
-  color: #f5d88c;
-}
-
-.card-detail a:hover::before {
-  color: #f5d88c;
 }

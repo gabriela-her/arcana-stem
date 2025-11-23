@@ -34,7 +34,7 @@ export default function CardDetail() {
 
         <div className="card-box">          
           <img src={card.arcaneImage?.imageSrc} alt={card.arcaneName} loading="lazy"/>
-          <h1> {card.arcaneName}</h1>
+          <h1 className="card-title"> {card.arcaneName}</h1>
           <p className="arcane-subtitle">Arcano Mayor Nº {card.arcaneNumber}</p>
           
 
@@ -45,7 +45,7 @@ export default function CardDetail() {
          
             <img src={card.goddessImage.imageSrc} alt={card.goddessName} loading="lazy"/>
           
-          <h2>{card.goddessName}</h2>
+          <h2 className="card-title">{card.goddessName}</h2>
           <p className="goddess-subtitle">Diosa Contemporánea</p>
 
 
