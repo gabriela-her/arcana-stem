@@ -29,8 +29,8 @@ export default function Layout() {
         </div>
 
         <div className="footer-links">
-          <a href="/">Home</a>
-          <a href="/reading">Lectura</a>
+          <Link to="/">Home</Link>
+          <Link to="/reading">Lectura</Link>
           <a href="https://github.com//gabriela-her/arcana-stem" target="_blank">GitHub</a>
           <a href="https://factoriaf5.org" target="_blank" rel="noreferrer"
             className="factoria-link"> Factoría F5</a>
@@ -39,13 +39,13 @@ export default function Layout() {
         <div className="footer-credits">
           <p>Desarrollado por <span className="highlight">
             <a
-              href="https://www.linkedin.com/in/TU_USUARIO/"
+              href="https://www.linkedin.com/in/gabriela-hernandez-67aa491b3/"
               target="_blank"
               rel="noreferrer"
               className="footer-author"
             >Arianna Gabriela H.B</a></span> · Bootcamp FemCoders
             <br />
-            <a href="https://6872278c76a5723aacd3cbb3.mockapi.io/api/v1/tarot" target="_blank"    rel="noreferrer" className="footer-apiLink"
+            <a href="https://6872278c76a5723aacd3cbb3.mockapi.io/api/v1/tarot" target="_blank" rel="noreferrer" className="footer-apiLink"
             >
               API creada por el equipo de Factoría F5 Barcelona.
             </a>
