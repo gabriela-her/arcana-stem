@@ -1,14 +1,13 @@
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { getCards } from '../../services/tarotServices';
-import TarotCard from '../../components/TarotCard';
+import DeckPreview from "../../components/DeckPreview/DeckPreview.jsx";
 import './home.css';
 
 export default function Home() {
   const [cards, setCards] = useState([]);
   const [status, setStatus] = useState('loading');
   const [error, setError] = useState(null);
-  const navigate = useNavigate();
+
 
   useEffect(() => {
     getCards()
@@ -28,7 +27,7 @@ export default function Home() {
   return (
     <section className="home-section">
       <div className="home-wrapper">
-        <h1  className="home-title">EL TAROT DE LAS DIOSAS CONTEMPORÁNEAS</h1>
+        <h1 className="home-title">EL TAROT DE LAS DIOSAS CONTEMPORÁNEAS</h1>
         <p className="home-subtitle">Un viaje simbólico que conecta los arcanos del tarot<br />
           con mujeres que transformaron la ciencia y la tecnología.</p>
         <p className="home-description">
@@ -37,17 +36,8 @@ export default function Home() {
         <p className="home-cta">
           Explora el mazo y comienza tu viaje.</p>
 
+        <div>{cards.length > 0 && <DeckPreview cards={cards} />}</div>
 
-        <div className="cards-grid">
-          {cards.map((card) => (
-            <TarotCard
-              key={card.id}
-              card={card}
-              faceDown={true}
-              onClick={() => navigate(`/card/${card.id}`)}
-            />
-          ))}
-        </div>
       </div>
     </section>
   );

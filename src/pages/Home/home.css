@@ -35,7 +35,7 @@
   margin-bottom: 1.5rem;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--color-gold);
+  color: var(--color-dark-gold);
   text-shadow: 0 0 8px rgba(230, 207, 168, 0.25);
   opacity: 0;
   transform: translateY(120px);
@@ -74,6 +74,7 @@
   margin-left: auto;
   margin-right: auto;
   line-height: 1.6;
+  color: var(--color-gold);
 }
 
 .home-cta {
@@ -84,48 +85,6 @@
   opacity: 0.9;
   text-shadow: 0 0 10px rgba(230, 207, 168, 0.25);
   font-family: var(--font-esoteric);
-}
-
-
-/* ------------------------------
-   Grid de cartas
------------------------------- */
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-  gap: 2rem;
-  justify-content: center;
-  justify-items: center;
-  padding-bottom: 1rem;
-
-
-}
-
-.card {
-  width: 170px;
-  height: 280px;
-  border-radius: 12px;
-  box-shadow: 0 0 15px var(--color-gold);
-  cursor: pointer;
-  color: var(--color-gold);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.35s ease;
-  padding: 0;
-}
-
-.card:hover {
-  transform: translateY(-4px) scale(1.03);
-  filter: brightness(1.15);
-  box-shadow: 0 0 30px rgba(230, 207, 168, 0.45);
-}
-
-
-/* Imagen dentro de la carta */
-.cardBack,
-.cardImg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 12px;
 }
 
 /* ------------------------------
@@ -155,23 +114,5 @@
     font-size: 1.1rem;
   }
 
-  .cards-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
-@media (max-width: 480px) {
-  .cards-grid {
-    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-    gap: 1.5rem;
-
-  }
-
-  .card {
-    max-width: 130px;
-    width: 100%;
-    height: auto;
-
-  }
-
-}
