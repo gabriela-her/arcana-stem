@@ -1,6 +1,6 @@
 .home-section {
   padding-top: calc(var(--navbar-height) + 1rem);
-  padding-bottom: 6rem;
+  padding-bottom: 2rem;
   text-align: center;
   position: relative;
 }
@@ -35,7 +35,7 @@
   margin-bottom: 1.5rem;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--color-dark-gold);
+  color: var(--color-gold);
   text-shadow: 0 0 8px rgba(230, 207, 168, 0.25);
   opacity: 0;
   transform: translateY(120px);
@@ -66,17 +66,6 @@
   font-style: italic;
 }
 
-.home-description {
-  font-size: 1.2rem;
-  margin-bottom: 2.5rem;
-  opacity: 0.85;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.6;
-  color: var(--color-gold);
-}
-
 .home-cta {
   font-size: 1.2rem;
   color: var(--color-gold);
@@ -104,10 +93,6 @@
 
   .home-subtitle {
     font-size: 1.1rem;
-  }
-
-  .home-description {
-    font-size: 1rem;
   }
 
   .home-cta {
