@@ -54,7 +54,7 @@
   font-family: var(--font-esoteric);
   font-size: 1.2rem;
   letter-spacing: 1.5px;
-  color: var(--color-gold);
+  color: var(--color-dark-gold);
   margin-left: 2rem;
   text-decoration: none;
   opacity: 0.85;
@@ -255,5 +255,48 @@
 
   .nav a {
     font-size: 1rem;
+  }
+}
+
+
+/* =============================
+            menu hamburguesa
+============================= */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--color-gold);
+  cursor: pointer;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  /* Mostrar hamburguesa en móvil */
+  .hamburger {
+    display: block;
+    z-index: 2000;
+  }
+
+  /* Ocultar nav por defecto */
+  .nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: rgba(10, 10, 20, 0.9);
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    border: 1px solid rgba(230, 207, 168, 0.3);
+    box-shadow: 0 0 12px rgba(230, 207, 168, 0.3);
+    backdrop-filter: blur(5px);
+  }
+
+  
+  body.menu-open .nav {
+    display: flex;
   }
 }

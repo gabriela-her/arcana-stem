@@ -1,0 +1,176 @@
+/* ------------------------------
+   SECCIÓN PRINCIPAL
+------------------------------ */
+
+.cards-gallery {
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+/* ------------------------------
+   TÍTULO & FRASE INTRO
+------------------------------ */
+
+.gallery-title {
+    font-family: var(--font-esoteric);
+    color: var(--color-gold);
+    font-size: clamp(1.4rem, 4vw, 2.4rem);
+    margin-bottom: 0.8rem;
+    letter-spacing: 1px;
+    text-shadow: 0 0 6px rgba(255, 225, 180, 0.4);
+    font-weight: 400;
+    line-height: 1.25;
+    padding: 0 1rem;
+}
+
+.card-intro {
+  color: rgba(230, 207, 168, 0.85);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+  line-height: 1.5;
+  padding: 0 1rem;
+  text-shadow: 0 0 4px rgba(255, 225, 180, 0.25);
+}
+
+
+/* ------------------------------
+   Mazo extendido
+------------------------------ */
+.cards-grid-expanded {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.5rem;
+    padding: 1rem;
+    justify-items: center;
+}
+
+.cards-gallery-section {
+    text-align: center;
+    margin-top: 2rem;
+    color: var(--color-gold);
+}
+
+.card {
+    width: 170px;
+    height: 280px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px var(--color-gold);
+    cursor: pointer;
+    color: var(--color-gold);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.35s ease;
+    padding: 0;
+}
+
+.card:hover {
+    transform: translateY(-4px) scale(1.03);
+    filter: brightness(1.15);
+    box-shadow: 0 0 30px rgba(230, 207, 168, 0.45);
+}
+
+
+.gallery-title {
+    font-family: var(--font-esoteric);
+    font-size: 2.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.gallery-subtitle {
+    opacity: 0.8;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+}
+
+/* Imagen dentro de la carta */
+.cardBack,
+.cardImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.expanded-card-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.card-overlay-info {
+    position: absolute;
+    bottom: 1%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 5;
+
+    padding: 0.7rem 1rem;
+    border-radius: 8px;
+    backdrop-filter: blur(3px);
+
+    width: 75%;
+}
+
+/* NOMBRE DEL ARCANO */
+.overlay-arcane {
+    display: block;
+    font-family: var(--font-esoteric);
+    color: var(--color-gold);
+    font-size: 1rem;
+    letter-spacing: 0.6px;
+    text-shadow: 0 0 10px rgba(255, 220, 150, 0.7);
+}
+
+/* NOMBRE DE LA CIENTÍFICA */
+.overlay-goddess {
+    display: block;
+    font-size: 0.9rem;
+    color: rgba(255, 235, 210, 0.9);
+    margin-top: 0.2rem;
+    font-style: italic;
+    opacity: 0.95;
+}
+
+
+/* ------------------------------
+   Responsive
+------------------------------ */
+
+@media (max-width: 900px) {
+    .cards-grid-expanded {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .cards-grid-expanded {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+
+    .expanded-card-wrapper {
+        width: 130px;
+        height: 210px;
+    }
+
+    .card {
+        width: 100%;
+        height: 100%;
+    }
+
+    .cardBack,
+    .cardImg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .overlay-arcane {
+        font-size: 0.85rem;
+    }
+
+    .overlay-goddess {
+        font-size: 0.75rem;
+    }
+}

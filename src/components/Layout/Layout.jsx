@@ -10,10 +10,25 @@ export default function Layout() {
       <Constellations />
 
       <header className="appHeader" role="banner">
-        <Link to="/" className="brand">Home</Link>
+        {/* BRAND */}
+        <Link to="/" className="brand">Arcana</Link>
+        {/* menu hamburguesa */}
+        <button
+          className="hamburger"
+          onClick={(e) => {
+            e.stopPropagation(); // ⛔ evita cerrar el menú al tocar el botón
+            document.body.classList.toggle("menu-open");
+          }}
+        >
+          ☰
+        </button>
+
         <nav className="nav" role="navigation" aria-label="Main Navigation">
-          {/* <NavLink to="/" end className={({ isActive }) => isActive ? 'active' : ''}>Cards</NavLink> */}
+          {/* menu escritorio */}
+          <NavLink to="/cards" className={({ isActive }) => isActive ? 'active' : ''}>Galeria</NavLink>
+
           <NavLink to="/reading" className={({ isActive }) => isActive ? 'active' : ''}>Lectura del tarot</NavLink>
+
         </nav>
       </header>
 
@@ -56,6 +71,11 @@ export default function Layout() {
     </div>
   );
 }
+
+document.addEventListener("click", () => {
+  document.body.classList.remove("menu-open");
+});
+
 
 function Stars() {
   const stars = Array.from({ length: 100 });
