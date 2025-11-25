@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { getCardById } from '../../services/tarotServices';
 import ExpandableText from '../../components/ExpandableText/ExpandableText';
 import './cardDetail.css';
@@ -9,6 +9,8 @@ export default function CardDetail() {
   const [card, setCard] = useState(null);
   const [status, setStatus] = useState('loading');
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
+
 
   useEffect(() => {
     getCardById(id)
@@ -28,9 +30,12 @@ export default function CardDetail() {
 
   return (
     <article className="card-detail">
-      <Link to="/" className="back-button">
+      <button
+        onClick={() => navigate(-1)}
+        className="back-button"
+      >
         ← Volver
-      </Link>
+      </button>
       <div className="card-columns">
 
         <div className="card-box">

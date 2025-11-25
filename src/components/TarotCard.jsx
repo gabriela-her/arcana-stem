@@ -1,7 +1,7 @@
 import cardBack from '../assets/images/card-back.png'
 export default function TarotCard({ card, faceDown = true, onClick, className = '', style = {} }) 
  {
-    //validacion 
+    
     if (!card && !faceDown) {
         console.warn('TarotCard: No card data provided for face-up card');
     }
@@ -17,7 +17,7 @@ export default function TarotCard({ card, faceDown = true, onClick, className = 
             {faceDown || !card ? (
                 <img
                     className="cardBack"
-                    src={cardBack}    // <-- aquí usas la variable
+                    src={cardBack}   
                     alt="Dorso de la carta"
                     loading="lazy"
                 />
