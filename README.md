@@ -21,6 +21,7 @@ Cuando una carta es elegida, desaparece del mazo, evitando inconsistencias.
 El mazo está desplegado con un diseño que imita la experiencia real de una mesa de tarot.
 
 ## 🌐 Demo en Vivo
+*Clic derecho → Abrir enlace en una nueva pestaña* <br>
 <a href="https://arcana-stem.vercel.app/" target="_blank" rel="noopener noreferrer">
   <img src="https://img.shields.io/badge/🌙%20Ver%20Demo%20en%20Vercel-000?style=for-the-badge&logo=vercel" alt="Ver Demo en Vercel">
 </a>
