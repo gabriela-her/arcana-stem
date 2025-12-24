@@ -20,9 +20,10 @@ Una carta no puede seleccionarse dos veces.
 Cuando una carta es elegida, desaparece del mazo, evitando inconsistencias.
 El mazo está desplegado con un diseño que imita la experiencia real de una mesa de tarot.
 
----
 ## 🌐 Demo en Vivo
-[![Ver en Vercel](https://img.shields.io/badge/🌙%20Ver%20Demo%20en%20Vercel-000?style=for-the-badge&logo=vercel)](https://arcana-stem.vercel.app/)
+<a href="https://arcana-stem.vercel.app/" target="_blank" rel="noopener noreferrer">
+  <img src="https://img.shields.io/badge/🌙%20Ver%20Demo%20en%20Vercel-000?style=for-the-badge&logo=vercel" alt="Ver Demo en Vercel">
+</a>
 
 ---
 
@@ -109,7 +110,7 @@ src/
 
 ---
 
-## 🚀 Cómo ejecutar el proyecto
+## Cómo ejecutar el proyecto
 ### Requisitos
 - Tener instalado **Node.js** y **npm**.  
 
@@ -140,11 +141,10 @@ npm run build
 
 --- 
 
-## Posibles mejoras futuras
+## Posibles mejoras:
 
 - Entrada interactiva más mística
 Crear una intro animada.
-Tras la animación.
 
 - Barajar el mazo dinámicamente
 Cada vez que el usuario acceda a la lectura, las cartas aparecerán en posiciones aleatorias, imitando mejor la experiencia real.
